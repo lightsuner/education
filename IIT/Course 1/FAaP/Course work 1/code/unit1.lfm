@@ -1,0 +1,161 @@
+object Form1: TForm1
+  Left = 269
+  Height = 409
+  Top = 112
+  Width = 765
+  Caption = 'Form1'
+  ClientHeight = 409
+  ClientWidth = 765
+  OnCreate = FormCreate
+  LCLVersion = '1.0.12.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 168
+    Top = 0
+    Width = 771
+    Anchors = [akTop, akLeft, akRight]
+    BidiMode = bdRightToLeft
+    ClientHeight = 168
+    ClientWidth = 771
+    ParentBidiMode = False
+    PopupMenu = PopupMenu1
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Height = 17
+      Top = 16
+      Width = 96
+      Caption = 'Поиск Файлов:'
+      ParentColor = False
+    end
+    object Extension: TEdit
+      Left = 152
+      Height = 22
+      Top = 16
+      Width = 224
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 24
+      Height = 17
+      Top = 56
+      Width = 94
+      Caption = 'Место поиска:'
+      ParentColor = False
+    end
+    object SearchPath: TEdit
+      Left = 152
+      Height = 22
+      Top = 56
+      Width = 224
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 24
+      Height = 17
+      Top = 112
+      Width = 70
+      Caption = 'С текстом:'
+      ParentColor = False
+    end
+    object Edit3: TEdit
+      Left = 152
+      Height = 22
+      Top = 112
+      Width = 224
+      TabOrder = 2
+    end
+    object SearchBtn: TButton
+      Left = 456
+      Height = 25
+      Top = 16
+      Width = 75
+      Cancel = True
+      Caption = 'Найти'
+      OnClick = SearchBtnClick
+      TabOrder = 3
+    end
+    object Button2: TButton
+      Left = 456
+      Height = 25
+      Top = 64
+      Width = 75
+      Caption = 'Отмена'
+      OnClick = Button2Click
+      TabOrder = 4
+    end
+    object Button3: TButton
+      Left = 384
+      Height = 23
+      Top = 56
+      Width = 26
+      Caption = '...'
+      OnClick = Button3Click
+      TabOrder = 5
+    end
+    object ExitBtn: TButton
+      Left = 456
+      Height = 25
+      Top = 112
+      Width = 75
+      Caption = 'Выход'
+      OnClick = ExitBtnClick
+      TabOrder = 6
+    end
+    object TStatus: TLabel
+      Left = 24
+      Height = 1
+      Top = 144
+      Width = 1
+      ParentColor = False
+    end
+  end
+  object FilesList: TListView
+    Left = 0
+    Height = 224
+    Top = 168
+    Width = 765
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSort = False
+    Columns = <    
+      item
+        Caption = 'Filename'
+        Width = 380
+      end    
+      item
+        Alignment = taCenter
+        AutoSize = True
+        Caption = 'Size'
+        Width = 224
+      end    
+      item
+        Alignment = taCenter
+        Caption = 'Modifed'
+        Width = 155
+      end>
+    ParentShowHint = False
+    PopupMenu = PopupMenu1
+    RowSelect = True
+    ScrollBars = ssAutoBoth
+    SortType = stBoth
+    TabOrder = 1
+    ToolTips = False
+    ViewStyle = vsReport
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 632
+    top = 64
+  end
+  object PopupMenu1: TPopupMenu
+    left = 632
+    top = 8
+    object MenuItem1: TMenuItem
+      Caption = 'Open file'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Open File in Finder'
+      OnClick = MenuItem2Click
+    end
+  end
+end
