@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-2.1.1.min.js"></script>
+    <script src="encoder.js"></script>
+    <script src="decoder.js"></script>
+</head>
+<body>
+<h2>Шифровка</h2>
+
+<div class="encode_1" id="encode_1">
+    <h3>1.1</h3>
+    <p><textarea cols="30" rows="1">MIKE_IS_BETRAYER</textarea> - <span class="result"></span></p>
+    <p><button>Шифровать</button></p>
+</div>
+<div class="encode_2" id="encode_2">
+    <h3>1.2</h3>
+    <p><textarea cols="30" rows="1">MIKE_IS_BETRAYER</textarea> - <span class="result"></span></p>
+    <p><button>Шифровать</button></p>
+</div>
+<h2>Расшифровка</h2>
+<div class="decode_1" id="encode_3">
+    <h3>2.1</h3>
+    <p><textarea cols="30" rows="1">KIMEEY_RAI_RS_T_BE</textarea> - <span class="result"></span></p>
+    <p><button>Расшифровать</button></p>
+</div>
+<div class="decode_2" id="encode_4">
+    <h3>2.2</h3>
+    <p><textarea cols="30" rows="1">WIJT_PFAMFW_AX_RSSR</textarea> - <span class="result"></span></p>
+    <p><button>Расшифровать</button></p>
+</div>
+
+<script>
+
+    function bindToHtml($container, onClick){
+        var $textarea = $container.find('textarea'),
+                $button = $container.find('button'),
+                $resultField = $container.find('.result');
+
+        $button.click(function(e){
+            e.preventDefault();
+            $resultField.html(onClick($textarea.val()));
+
+        });
+    }
+
+
+
+    bindToHtml($('#encode_1'), function(text){
+        return (new Encoder([4,1,6,4,1])).setText(text).readTextFromFigure();
+    });
+
+    bindToHtml($('#encode_2'), function(text){
+        return (new Encoder([4,1,6,4,1])).setText(text, 4).readTextFromFigure();
+    });
+
+    bindToHtml($('#encode_3'), function(text){
+        return (new Decoder(3, 6)).setText(text).writeToFigure1().readFromFigure1();
+    });
+
+    bindToHtml($('#encode_4'), function(text){
+        return (new Decoder()).setText(text).writeToFigure2('MONEY').readFromFigure2();
+    });
+
+</script>
+</body>
+</html>
