@@ -1,0 +1,26 @@
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\bin\Debug\TI lab1.exe
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\bin\Debug\TI lab1.pdb
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\obj\x86\Debug\TI_lab1.Form1.resources
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\obj\x86\Debug\TI_lab1.Properties.Resources.resources
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\obj\x86\Debug\TI lab1.csproj.GenerateResource.Cache
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\obj\x86\Debug\TI lab1.exe
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\obj\x86\Debug\TI lab1.pdb
+C:\Users\комп\Google Drive\Workspace\TI lab1\TI lab1\obj\x86\Debug\TI lab1.csprojResolveAssemblyReference.cache
+E:\TI lab1\TI lab1\obj\x86\Debug\TI lab1.exe
+E:\TI lab1\TI lab1\obj\x86\Debug\TI lab1.pdb
+E:\TI lab1\TI lab1\bin\Debug\TI lab1.exe
+E:\TI lab1\TI lab1\bin\Debug\TI lab1.pdb
+E:\TI lab1\TI lab1\obj\x86\Debug\TI lab1.csprojResolveAssemblyReference.cache
+E:\TI lab1\TI lab1\obj\x86\Debug\TI_lab1.Form1.resources
+E:\TI lab1\TI lab1\obj\x86\Debug\TI_lab1.Properties.Resources.resources
+E:\TI lab1\TI lab1\obj\x86\Debug\TI lab1.csproj.GenerateResource.Cache
+G:\ТИ\Лабы\TI lab1\TI lab1\obj\x86\Debug\TI lab1.exe
+G:\ТИ\Лабы\TI lab1\TI lab1\obj\x86\Debug\TI lab1.pdb
+C:\Users\alkuk\Documents\TI lab1\TI lab1\bin\Debug\TI lab1.exe
+C:\Users\alkuk\Documents\TI lab1\TI lab1\bin\Debug\TI lab1.pdb
+C:\Users\alkuk\Documents\TI lab1\TI lab1\obj\x86\Debug\TI lab1.csprojResolveAssemblyReference.cache
+C:\Users\alkuk\Documents\TI lab1\TI lab1\obj\x86\Debug\TI_lab1.Form1.resources
+C:\Users\alkuk\Documents\TI lab1\TI lab1\obj\x86\Debug\TI_lab1.Properties.Resources.resources
+C:\Users\alkuk\Documents\TI lab1\TI lab1\obj\x86\Debug\TI lab1.csproj.GenerateResource.Cache
+C:\Users\alkuk\Documents\TI lab1\TI lab1\obj\x86\Debug\TI lab1.exe
+C:\Users\alkuk\Documents\TI lab1\TI lab1\obj\x86\Debug\TI lab1.pdb
