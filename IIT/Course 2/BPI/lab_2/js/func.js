@@ -1,4 +1,18 @@
 function euclidNod(m, n) {
+    m = parseInt(m, 10);
+    n = parseInt(n, 10);
+    if (!m || !n) {
+        return m+n;
+    }
+
+    if (m == n) {
+        return m;
+    }
+
+    if (m == 1 || n == 1) {
+        return 1;
+    }
+
     while (m && n) {
         if (m > n) {
             m = Math.floor(m%n);
@@ -10,6 +24,8 @@ function euclidNod(m, n) {
 }
 
 function binaryNod(m, n) {
+    m = parseInt(m, 10);
+    n = parseInt(n, 10);
     if (!m || !n) {
         return m+n;
     }
@@ -51,6 +67,7 @@ function binaryNod(m, n) {
 }
 
 function eulerFunction(n) {
+    n = parseInt(n, 10);
     var output = n;
 
     for (var i=2; i*i<=n; ++i) {
@@ -70,6 +87,9 @@ function eulerFunction(n) {
 }
 
 function func4(a, b, n) {
+    a = parseInt(a, 10);
+    b = parseInt(b, 10);
+    n = parseInt(n, 10);
     if (n < 0) {
         return "Число n меньше 0";
     }
@@ -87,9 +107,25 @@ function func4(a, b, n) {
 }
 
 function func5(n, r) {
+    r = parseInt(r, 10);
+    n = parseInt(n, 10);
     return Math.pow(n, eulerFunction(r)-1)%r;
 }
 
-function func6() {
-    
+function fastEx(multiplier, power, mod) {
+    multiplier = parseInt(multiplier, 10);
+    power = parseInt(power, 10);
+    mod = parseInt(mod, 10);
+    var output = 1;
+
+    while (power) {
+        while (power % 2 == 0) {
+            power /= 2;
+            multiplier = (multiplier * multiplier) % mod;
+        }
+        power -= 1;
+        output = (output * multiplier) % mod;
+    }
+
+    return output;
 }

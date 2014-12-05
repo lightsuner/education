@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/func.js"></script>
+</head>
+<body>
+
+<div id="nod_e">
+    <h5>Вычислите НОД (m, n) по алгоритму Евклида.</h5>
+    m: <input type="text" size="3" value="884"/>, n: <input type="text" size="3" value="1483"/> - Результат: <span class="result"></span>
+    <br/>
+    <button>Ok</button>
+</div>
+
+<div id="nod_bin">
+    <h5>Вычислите НОД(m, n) используя бинарный алгоритм.</h5>
+    m: <input type="text" size="3" value="472"/>, n: <input type="text" size="3" value="844"/> - Результат: <span class="result"></span>
+    <br/>
+    <button>Ok</button>
+</div>
+
+<div id="eyl">
+    <h5>Вычислите функцию Эйлера для n=... (произвольное число)</h5>
+    n: <input type="text" size="3" value="423"/> - Результат: <span class="result"></span>
+    <br/>
+    <button>Ok</button>
+</div>
+
+<div id="doc">
+    <h5>Покажите, что ab=1 mod n</h5>
+    a: <input type="text" size="3" value="24"/>, b: <input type="text" size="3" value="936"/>, n: <input type="text" size="3" value="1007"/> - Результат: <span class="result"></span>
+    <br/>
+    <button>Ok</button>
+</div>
+
+<div id="mod">
+    <h5>Вычислите взаимообратное по модулю r для числа m.</h5>
+    m: <input type="text" size="3" value="7"/>, r: <input type="text" size="3" value="44"/> - Результат: <span class="result"></span>
+    <br/>
+    <button>Ok</button>
+</div>
+
+<div id="fastex">
+    <h5>Покажите, что mn mod r = k</h5>
+    m: <input type="text" size="3" value="8"/>, n: <input type="text" size="3" value="9"/>, r: <input type="text" size="3" value="19"/> - Результат: <span class="result"></span>
+    <br/>
+    <button>Ok</button>
+</div>
+
+<script>
+    $('#nod_e').each(function(){
+       var $this = $(this),
+               $input0 = $($this.find('input').get(0)),
+               $input1 = $($this.find('input').get(1)),
+               $result = $this.find('.result')
+               ;
+        $this.find('button').click(function(){
+            $result.html(euclidNod($input0.val(), $input1.val()));
+        });
+    });
+
+    $('#nod_bin').each(function(){
+        var $this = $(this),
+                $input0 = $($this.find('input').get(0)),
+                $input1 = $($this.find('input').get(1)),
+                $result = $this.find('.result')
+                ;
+        $this.find('button').click(function(){
+            $result.html(binaryNod($input0.val(), $input1.val()));
+        });
+    });
+
+    $('#eyl').each(function(){
+        var $this = $(this),
+                $input0 = $($this.find('input').get(0)),
+                $result = $this.find('.result')
+                ;
+        $this.find('button').click(function(){
+            $result.html(eulerFunction($input0.val()));
+        });
+    });
+
+    $('#doc').each(function(){
+        var $this = $(this),
+                $input0 = $($this.find('input').get(0)),
+                $input1 = $($this.find('input').get(1)),
+                $input2 = $($this.find('input').get(2)),
+                $result = $this.find('.result')
+                ;
+        $this.find('button').click(function(){
+            $result.html(func4($input0.val(), $input1.val(), $input2.val()));
+        });
+    });
+
+    $('#mod').each(function(){
+        var $this = $(this),
+                $input0 = $($this.find('input').get(0)),
+                $input1 = $($this.find('input').get(1))
+                $result = $this.find('.result')
+                ;
+        $this.find('button').click(function(){
+            $result.html(func5($input0.val(), $input1.val()));
+        });
+    });
+
+    $('#fastex').each(function(){
+        var $this = $(this),
+                $input0 = $($this.find('input').get(0)),
+                $input1 = $($this.find('input').get(1)),
+                $input2 = $($this.find('input').get(2)),
+                $result = $this.find('.result')
+                ;
+        $this.find('button').click(function(){
+            $result.html(fastEx($input0.val(), $input1.val(), $input2.val()));
+        });
+    });
+
+</script>
+</body>
+</html>
