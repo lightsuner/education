@@ -1,0 +1,185 @@
+body {
+    background-color: #a8ddff;
+    margin: 0;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 2px;
+}
+
+ul h3 {
+    margin: 0;
+}
+
+.transparent-body {
+    background-color: transparent;
+    width: 250px;
+}
+
+table {
+    border: none;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.header {
+    height: 95px;
+    text-align: center;
+}
+
+.header-end{
+    height: 14px;
+}
+.header-end td {
+    border-bottom: 1px solid #0400b0;
+}
+
+.left-bar {
+    width: 256px;
+    background: url("../images/image6.jpg") no-repeat;
+}
+
+.main-container {
+    background-color: #edf8ff;
+}
+
+.footer {
+    background-color: #0000CD;
+    text-align: center;
+}
+
+.links {
+    text-align: center;
+    background-color: #C6E9FF;
+}
+
+.white {
+    color: #FFF;
+}
+
+.left-bar, .news {
+    vertical-align: top;
+    color: #000;
+}
+
+.news {
+    width: 320px;
+    padding-left: 10px;
+    box-sizing: padding-box;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.m-t10 {
+    margin-top: 10px;
+}
+.m-t18 {
+    margin-top: 18px;
+}
+
+.m-l5 {
+    margin-left: 5px;
+}
+
+#login-wrapper input, #login-wrapper button {
+    border: 1px darkgray solid;
+    background: #c6e9ff;
+
+}
+
+#login-wrapper input {
+    width: 80px;
+}
+
+#login-wrapper {
+    padding-left: 40px;
+}
+
+.icon-news {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-image: url("../images/image4.jpg");
+    margin-right: 9px;
+}
+
+dl dt {
+}
+dl dd {
+    margin-bottom: 20px;
+    margin-left: 26px;
+}
+
+.system-links {
+    float: right;
+    font-size: 14px;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.head-container {
+    padding: 0 20px;
+    overflow: hidden;
+}
+.head-container h1{
+    margin: 0;
+    #margin-left: 130px;
+    text-align: center;
+}
+
+
+
+.menu {
+    border-bottom: 2px solid #0400b0;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+#login-wrapper label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-form table {
+    width: 100%;
+}
+
+.login-form table tr td:first-child {
+    width: 60px;
+}
+
+.menu ul li h3 {
+    font-size: 16px;
+}
+
+.menu ul li ul li h3 {
+    font-size: 14px;
+}
+
+.text-container p {
+    margin: 0;
+}
+
+.text-container .full-width {
+    width: 100%;
+}
+
+.text-container .normal-width {
+    padding-right: 40px;
+}
+
+.blue {
+    color: blue;
+}

@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+}
+#header {
+    position: relative;
+    padding: 30px 0;
+    width: 100%;
+    border-bottom: solid #2178ae 2px;
+    background: #c6e9ff;
+}
+
+#logo {
+    vertical-align: middle;
+    text-align: center;
+}
+
+#left-bar {
+    display: inline-block;
+    float: left;
+    min-width: 160px;
+    width: 20%;
+    height: 100%;
+    background: url("../images/image6.jpg") no-repeat;
+}
+
+#category-block {
+    height: 206px;
+    border-bottom: solid #2178ae 2px;
+}
+#category-block ul {
+    padding-left: 20px;
+    list-style: none;
+}
+#category-block h3 {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+
+#login-wrapper input, #login-wrapper button {
+    border: 1px darkgray solid;
+    background: #c6e9ff;
+}
+
+#container {
+    display: inline-block;
+    float: left;
+    width:55%;
+    height: 100%;
+    background:  #efffff;
+}
+
+#right-bar {
+    display: inline-block;
+    float: left;
+    padding-left: 4%;
+    width: 21%;
+    height: 100%;
+    background:  #efffff;
+}
+
+#footer #line1 {
+    padding: 4px 0;
+}
+#footer #line1 .left {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    height: 36px;
+    background:  #efffff;
+}
+
+#footer #line1 #signature {
+    display: inline-block;
+    float: left;
+    width: 80%;
+    background:  mediumblue;
+    text-align: center;
+}
+
+#footer #line2 {
+    padding: 4px 0;
+    width: 100%;
+    background:  #efffff;
+    text-align: center;
+}
+
+#footnote {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+}
+
+.white  {
+    color: white;
+}
+
+.blue {
+    color: blue;
+}
+.black {
+    color: black;
+}
+.link {
+    text-decoration: none;
+}
+.text-justify {
+    text-align: justify;
+}
+.m-t18 {
+    margin-top: 18px;
+}
+.m-l5 {
+    margin-left: 5px;
+}
+.icon-news {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-image: url("../images/image4.jpg");
+}
+
+.clearfix:after {
+    display: block; /* Older browser do not support empty content */
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: " ";
+}

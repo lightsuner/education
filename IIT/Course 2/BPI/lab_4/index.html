@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/func.js"></script>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Отправитель</th>
+        <th>Получатель</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <div>
+                <h5>Исходные даныне:</h5>
+                p: <input type="text" size="3" value="17" id="p"/>
+                <br/>
+                q: <input type="text" size="3" value="19" id="q"/>
+                <br/>
+                H0: <input type="text" size="3" value="100" id="h0"/>
+                <br/>
+                <button id="show-eiler">Eiler</button>
+                , <span id="eiler-container"></span>
+                <br/>
+                Ko: <input type="text" size="3" value="13" id="ko"/> K0 < eiler
+                <br/>
+                <button id="ko-check">Check ko</button>
+                , r: <span id="r-result"></span>, K0-nod: <span id="ko-result"></span>, K0-nod: <span id="ko-result"></span>, Kc:
+                <span id="kc-result"></span>
+            </div>
+
+            <div>
+                <h5>Получить Хэш: (m = h(М))</h5>
+                <textarea id="source-text" cols="20" rows="5"></textarea> ----- m = h(М) = <span id="source-result"></span>
+                <br/>
+                <button id="source-process">Ok</button>
+                <br/><br/>
+                <h5>Получить S:</h5>
+                ------ S = m ^ Kc mod r =  <span id="s-result"></span>
+                <br/>
+                <button id="get-s">get S</button>
+            </div>
+        </td>
+        <td>
+            <div>
+                <h5>Исходные даныне:</h5>
+                Ko: <input type="text" size="3" value="" id="received-ko"/>
+                r: <input type="text" size="3" value="" id="received-r"/>
+                S: <input type="text" size="3" value="" id="received-s"/>
+                <br/>
+                M: <textarea id="received-m" cols="30" rows="5"></textarea>
+
+                <button id="received-check">Check</button>
+                <br/>
+                <span id="check-results"></span>
+            </div>
+
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<script type="application/javascript">
+    var $p = $('#p'),
+            $q = $('#q'),
+            $h0 = $('#h0'),
+            $ko = $('#ko')
+            ;
+
+    function getP() {
+        return parseInt($p.val(), 10);
+    }
+    function getQ() {
+        return parseInt($q.val(), 10);
+    }
+
+    function getRs() {
+        return getR(getP(), getQ());
+    }
+
+    function getH0() {
+        return parseInt($h0.val(), 10);
+    }
+    function getKo() {
+        return parseInt($ko.val(), 10);
+    }
+    function getKc() {
+        var eiler = getEiler(getP(), getQ()),
+                ko = getKo();
+
+        return getKs(ko, eiler)
+    }
+
+    function getHashM() {
+        return hashString($('#source-text').val(), getH0(), getRs());
+    }
+
+    function getS() {
+        return generateS(getHashM(), getKc(), getRs());
+    }
+
+    function getReceivedS() { return parseInt($('#received-s').val(), 10); }
+    function getReceivedKo() { return parseInt($('#received-ko').val(), 10); }
+    function getReceivedR() { return parseInt($('#received-r').val(), 10); }
+    function getReceivedM() { return $('#received-m').val(); }
+
+
+    $('#source-process').click(function (e) {
+        $('#source-result').html(getHashM());
+    });
+
+
+    $('#show-eiler').click(function () {
+        $('#eiler-container').html(getEiler(getP(), getQ()));
+
+    });
+
+    $('#ko-check').click(function () {
+        var eiler = getEiler(getP(), getQ()),
+                ko = getKo();
+
+        $('#ko-result').html(binaryNod(ko, eiler));
+        $('#kc-result').html(getKc());
+        $('#r-result').html(getRs());
+
+    });
+
+    $('#get-s').click(function(){
+        $('#s-result').html(getS());
+    });
+
+    $('#received-check').click(function(){
+        var $resultList = $('#check-results'),
+                result = [];
+
+        var m = generateS(getReceivedS(), getReceivedKo(), getReceivedR());
+        result.push('m = '+m);
+
+        var m_ = hashString(getReceivedM(), getH0(), getReceivedR());
+        result.push('m\' = '+m_);
+
+        if (m === m_) {
+            result.push('<b>Текст подлинный</b>');
+        } else {
+            result.push('<b>Текст фальсифицирован</b>');
+        }
+
+        $resultList.html(result.join('<br>'));
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/func.js"></script>
+</head>
+<body>
+
+<div >
+    <h5>Исходные даныне:</h5>
+    p: <input type="text" size="3" value="3" id="p"/>
+    <br/>
+    q: <input type="text" size="3" value="17" id="q"/>
+    <br/>
+    Kc: <input type="text" size="3" value="13" id="kc"/>
+    <br/>
+    Ko: <input type="text" size="3" value="" id="ko"/>
+</div>
+
+<div >
+    <h5>Получить открытый ключ:</h5>
+    Ko: <input type="text" size="3" value="" id="generated-ko"/>
+    <br/>
+    <button id="get-open-key">Ok</button>
+</div>
+
+<div>
+    Зашифровать
+    <textarea id="source-text" cols="20" rows="5"></textarea> <span id="source-result"></span>
+    <br/>
+    <button id="source-process">Ok</button>
+</div>
+
+<div>
+    Расшифровать
+    <textarea id="dest-text" cols="20" rows="5"></textarea> <span id="dest-result"></span>
+    <br/>
+    <button id="dest-process">Ok</button>
+</div>
+
+<script type="application/javascript">
+    var $p = $('#p'),
+        $q = $('#q'),
+        $kc = $('#kc'),
+        $ko = $('#ko'),
+        $generatedKo = $('#generated-ko'),
+        $getOpenKey = $('#get-open-key')
+        ;
+
+    function getP() { return parseInt($p.val(), 10); }
+    function getQ() { return parseInt($q.val(), 10); }
+    function getKo() { return parseInt($ko.val(), 10); }
+    function getKc() { return parseInt($kc.val(), 10); }
+
+    $getOpenKey.click(function() {
+        var eiler = getEiler(getP(), getQ()),
+                ks = parseInt(getKc(), 10);
+
+        $generatedKo.val(euclideX(eiler, ks)[1]);
+    });
+
+    $('#source-process').click(function() {
+        $('#source-result').html(encodeString($('#source-text').val(), getKo(), getR(getP(), getQ())));
+    });
+
+    $('#dest-process').click(function() {
+        $('#dest-result').html(decodeString($('#dest-text').val(), getKc(), getR(getP(), getQ())));
+    });
+
+</script>
+</body>
+</html>
